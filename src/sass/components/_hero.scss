@@ -1,0 +1,162 @@
+@use 'sass:color';
+@use '../abstracts/abstracts' as abs;
+
+.hero {
+
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+    }
+
+    &__maininfo {
+        grid-column: 1;
+        grid-row: 1;
+        margin-top: 70px;
+        z-index: 10;
+
+        &_title {
+            width: 708px;
+            font-size: 56px;
+            line-height: 70px;
+            color: abs.$azul;
+        }
+
+        &_description {
+            width: 665px;
+            margin-top: 28px;
+            font-size: 21px;
+            line-height: 35px;
+            color: abs.$gris;
+        }
+
+        &_buttons {
+            display: flex;
+            align-items: center;
+            margin-top: 49px;
+
+            &_watchvideo {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                column-gap: 14px;
+
+                span {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    
+                    background-color: white;
+                    width: 42px;
+                    height: 42px;
+                    border-radius: 21px;
+                    box-shadow: 0px 21px 44px 0px rgba(0,0,0,0.15);
+
+                    img {
+                        width: 13px;
+                    }
+                }
+
+                margin-left: 42px;
+                color: abs.$azul;
+                text-decoration: none;
+                position: relative;
+
+                &:hover{
+                    color: color.adjust(abs.$azul, $lightness: 20%);
+
+                    span {
+                        background-color: abs.$azul;
+
+                        svg path {
+                            fill: white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__features {
+        grid-column: 1;
+        grid-row: 2;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 562.62px;
+        height: 249px;
+        background-color: white;
+        margin-top: 78.75px;
+        padding: 28px;
+
+        article {
+            width: 126.88px;
+            text-align: center;
+
+            img {
+                width: 63px;
+            }
+
+            h3 {
+                margin-top: 21px;
+                font-size: 31.5px;
+                line-height: 47px;
+                color: abs.$azul;
+                font-weight: 500;
+            }
+
+            p {
+                margin-top: 14px;
+                color: abs.$gris;
+            }
+
+        }
+    }
+
+    &__img {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+        height: 840px;
+        background-image: url('../../img/spa.png');
+        background-repeat: no-repeat;
+        background-position: center -50px;
+        background-size: 496px;
+        position: relative;
+
+        & > img {
+            margin-left: -567px;
+            margin-top: 75px;
+        }
+
+        &_article {
+            position: absolute;
+            width: 354px;
+            border-radius: 14px;
+            background-color: rgba(255,255,255,.5);
+            padding: 21px;
+            
+            &_description {
+                margin-top: 7px;
+                color: abs.$negro;
+            }
+
+            &_author {
+                margin-top: 7px;
+                color: abs.$azul;
+            }
+
+            &.sophia {
+                top:276px;
+                left: 385px;
+            }
+
+            &.tamara {
+                top: 549px;
+                left: 262px;
+            }
+                
+        }
+
+
+    }
+}

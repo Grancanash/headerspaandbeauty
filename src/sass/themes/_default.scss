@@ -1,0 +1,23 @@
+@use '../abstracts/abstracts' as abs;
+
+html * {
+    font-family: abs.$poppins;
+    font-size: 15.75px;
+    line-height: 24px;
+}
+ 
+body {
+    overflow-x: hidden;
+
+    min-width: 1440px;
+
+    background: linear-gradient(to right, abs.$gris-fondo 984px, abs.$verde 416px);
+    background-size: 100% 717.5px;
+    background-repeat: no-repeat;
+
+    @media (min-width: 1441px) {
+        background: linear-gradient(to right, abs.$gris-fondo calc(((100vw - 1440px) / 2) + 984px), abs.$verde calc(((100vw - 1440px) / 2) + 416px));
+        background-size: 100% 717.5px;
+        background-repeat: no-repeat;
+    }
+} 

@@ -1,0 +1,67 @@
+@use 'sass:color';
+@use '../abstracts/abstracts' as abs;
+.header {
+    .container {
+        display: flex;
+        align-items: center;
+        height: 105px;
+    }
+
+    &__logo {
+        display: flex;
+    }
+
+    &__nav {
+        margin-left: 153px;
+
+        ul {
+            display: flex;
+            column-gap: 49px;
+
+            a {
+                text-decoration: none;
+                color: abs.$azul;
+
+                &:hover {
+                    color: color.adjust(abs.$azul, $lightness: 20%)
+                }
+            }
+
+            li:last-child {
+                position: relative;
+
+                &::after {
+                    content: '';
+                    background-image: url('../../img/menu_arrow.svg');
+                    width: 21px;
+                    height: 21px;
+                    position: absolute;
+                    top: 0;
+                    right: -27px;
+                }
+            }
+            
+        }
+    }
+
+    &__secondary_menu {
+        margin-left: auto;
+
+        ul {
+            display: flex;
+            align-items: center;
+
+            a {
+                display: flex;
+            }
+        }
+
+        &_search {
+            margin-right: 28px;
+        }
+
+        &_shoppingbag {
+            margin-right: 58px;
+        }
+    }
+}
